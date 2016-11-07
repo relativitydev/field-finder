@@ -1,0 +1,37 @@
+﻿	Dependencies represent the structure of the system under test (SUT).  While this framework allows the user to decide their level of granularity, 
+	A good rule of thumb is to create a master dependency, then add dependencies as they match the actual needs of the system.
+
+Best Practices:
+
+	1. Create a Dependencies folder in your project to house all dependencies.
+	2. Create a Returns folder under the Dependencies folder to segregate test values from test mocks/fakes.
+
+		Example:
+			
+				ProjectName
+					-> Dependencies
+						-> Returns
+
+	3. Extend all representations of test classes with ADependency.
+	4. Override SetMyDependencies() on the ADependency-extended object and assign all values and stubs there.
+		 This will allow the child to Push() it's changes to the parent.
+	5. Place all data necessary to test the object in it's ADependency representation, and all stubs in the
+		 seam's ADependency Returns?
+
+	Example:
+	
+		-> Dependencies
+			-> Returns
+				DBQueryReturns
+			DBQueryDependency
+			ActiveLayoutDependency
+
+	* Segregate test values from test stubs.  This allows one stub to return many values, and makes one point of change if the method changes in code.
+	* Create a master parent class (AgentDependencies for example) to which you will add all dependencies as children.
+	* Extend all test dependencies from ADepdencency.cs.
+			- This gives your tests the oportunity to recursively pull any class that's been added to the master parent.
+	* If you add RandomGenerator to your dependency tree, you may use it anywhere.  Note: If you call SetMyDependencies() in the constructor,
+		the dependency may not yet have been added to the tree and therefore will not have access to RandomGenerator.  In this case, separate your
+		first call to SetMyDependencies() to execute after the constructor has been called.
+	* Don't add more than one of the same type to a tree!  The results may be confusing, as the location you pull from may return a different object.
+		One of the chief points behind ADependency is minimizing data sources.

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6DB0BA47-085C-4937-8FFB-7BF7130B21D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TextExtractor.EventHandlers</RootNamespace>
+    <AssemblyName>TextExtractor.EventHandlers</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="kCura.EventHandler, Version=9.2.190.9, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Relativity\kCura.EventHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="kCura.Relativity.Client">
+      <HintPath>..\packages\Relativity\kCura.Relativity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Relativity.API, Version=9.2.190.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Relativity\Relativity.API.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Version\AssemblyInfo.cs" />
+    <Compile Include="Application\PopulatePredefinedRegularExpression.cs" />
+    <Compile Include="ExtractorProfile\TextExtractorProfilePreCascadeDelete.cs" />
+    <Compile Include="ExtractorRegularExpression\RegularExpressionJob.cs" />
+    <Compile Include="ExtractorRegularExpression\RegularExpressionPreCascadeDelete.cs" />
+    <Compile Include="ExtractorSet\ConsoleJob.cs" />
+    <Compile Include="ExtractorSet\TextExtractorSetPreMassDelete.cs" />
+    <Compile Include="ExtractorTargetText\TargetTextPageInteraction.cs" />
+    <Compile Include="ExtractorTargetText\TextExtractorTargetTextPreCascadeDelete.cs" />
+    <Compile Include="Interfaces\IConsoleJob.cs" />
+    <Compile Include="Interfaces\IRegularExpressionJob.cs" />
+    <Compile Include="Interfaces\ITextExtractorTargetTextJob.cs" />
+    <Compile Include="Interfaces\ITextExtractorSetJob.cs" />
+    <Compile Include="Interfaces\ITextExtractorProfileJob.cs" />
+    <Compile Include="ExtractorSet\ManageSetConsole.cs" />
+    <Compile Include="Application\PostInstallSetup.cs" />
+    <Compile Include="ExtractorTargetText\TextExtractorTargetTextJob.cs" />
+    <Compile Include="ExtractorTargetText\TextExtractorTargetTextPreSave.cs" />
+    <Compile Include="ExtractorSet\TextExtractorSetPreSave.cs" />
+    <Compile Include="ExtractorSet\TextExtractorSetJob.cs" />
+    <Compile Include="ExtractorSet\TextExtractorSetPreCascadeDelete.cs" />
+    <Compile Include="ExtractorSet\TextExtractorSetPreDelete.cs" />
+    <Compile Include="ExtractorProfile\TextExtractorProfileJob.cs" />
+    <Compile Include="ExtractorProfile\TextExtractorProfilePreSave.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextExtractor.Helpers\TextExtractor.Helpers.csproj">
+      <Project>{8f4cda45-eaf3-4b40-a7a9-f312b7664abc}</Project>
+      <Name>TextExtractor.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExtractorTargetText\JavaScript\pageInteractionEvHandler.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F4CDA45-EAF3-4B40-A7A9-F312B7664ABC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TextExtractor.Helpers</RootNamespace>
+    <AssemblyName>TextExtractor.Helpers</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="kCura.Relativity.Client, Version=9.2.190.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Relativity\kCura.Relativity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Relativity.API, Version=9.2.190.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Relativity\Relativity.API.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Version\AssemblyInfo.cs" />
+    <Compile Include="Constant.cs" />
+    <Compile Include="EmailUtility.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="CustomExceptions.cs" />
+    <Compile Include="ExceptionMessageFormatter.cs" />
+    <Compile Include="Interfaces\IExtractorTargetText.cs" />
+    <Compile Include="Interfaces\ISqlQueryHelper.cs" />
+    <Compile Include="Interfaces\ITargetRule.cs" />
+    <Compile Include="Interfaces\ITextExtractionUtility.cs" />
+    <Compile Include="IValidator.cs" />
+    <Compile Include="Interfaces\ITextExtractionValidator.cs" />
+    <Compile Include="ModelFactory\ArtifactFactory.cs" />
+    <Compile Include="ModelFactory\IArtifactFactory.cs" />
+    <Compile Include="Models\DocumentBatch.cs" />
+    <Compile Include="Models\ErrorLogModel.cs" />
+    <Compile Include="Models\ExtractorRegullarExpression.cs" />
+    <Compile Include="Models\ManagerQueue.cs" />
+    <Compile Include="Models\ManagerQueueRecord.cs" />
+    <Compile Include="Models\ExtractorSetDocument.cs" />
+    <Compile Include="Models\ExtractorSet.cs" />
+    <Compile Include="Models\ExtractorProfile.cs" />
+    <Compile Include="Models\ExtractorTargetText.cs" />
+    <Compile Include="Models\SmtpSettings.cs" />
+    <Compile Include="Models\TargetRule.cs" />
+    <Compile Include="Models\ExtractorSetHistory.cs" />
+    <Compile Include="Models\ExtractorSetReporting.cs" />
+    <Compile Include="Models\TextExtractorLog.cs" />
+    <Compile Include="Models\WorkerQueue.cs" />
+    <Compile Include="Models\WorkerQueueRecord.cs" />
+    <Compile Include="SqlQueryHelper.cs" />
+    <Compile Include="Rsapi\ArtifactQueries.cs" />
+    <Compile Include="Rsapi\ErrorQueries.cs" />
+    <Compile Include="Rsapi\IArtifactQueries.cs" />
+    <Compile Include="Rsapi\MessageFormatter.cs" />
+    <Compile Include="Rsapi\Response.cs" />
+    <Compile Include="TextExtractionUtility.cs" />
+    <Compile Include="TextExtractionValidator.cs" />
+    <Compile Include="Validator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
