@@ -16,9 +16,9 @@ using System.Runtime.InteropServices;
 [assembly: CLSCompliant(false)]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: AssemblyCopyright("Copyright (c) 2015, kCura LLC")]
-[assembly: AssemblyTitle("Template")]
-[assembly: AssemblyDescription("Tools to help build source code for kCura repositories.")]
+[assembly: AssemblyCopyright("")]
+[assembly: AssemblyTitle("FieldFinder")]
+[assembly: AssemblyDescription("The Field Finder solution allows you to extract certain text from a document's OCR text field and populate that text in specified workspace fields.")]
 [assembly: AssemblyCompany("kCura LLC")]
 [assembly: AssemblyProduct("Template")]
 

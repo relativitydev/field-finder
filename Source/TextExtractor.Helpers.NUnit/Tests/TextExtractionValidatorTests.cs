@@ -16,7 +16,7 @@ namespace TextExtractor.Helpers.NUnit.Tests
 		private const int CHARACTER_LENGTH = 1;
 		private const bool IS_CASE_SENSITIVE = true;
 		private const int OCCURRENCE = 1;
-        private TargetRule TargetRule;
+     //   private TargetRule TargetRule;
 
 		[SetUp]
 		public void Setup()
