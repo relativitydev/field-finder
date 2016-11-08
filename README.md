@@ -6,8 +6,8 @@ TSD Services has been a major contributor to this project.  If you are intereste
 
 # Project Setup
 This project requires references to kCura's Relativity& # 174 SDK dlls.  These dlls are not part of the open source project and must be obtained through kCura.  In the "packages" folder under "Source" you will need to create a "Relativity" folder if one does not exist.  You will need to add the following dlls:
-*kCura.Agent.dll
-*kCura.EventHandler.dll
-*kCura.Relativity.Client.dll
-*Relativity.API.dll
-*Relativity.CustomPages.dll
+-kCura.Agent.dll
+-kCura.EventHandler.dll
+-kCura.Relativity.Client.dll
+-Relativity.API.dll
+-Relativity.CustomPages.dll
