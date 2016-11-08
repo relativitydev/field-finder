@@ -3,6 +3,7 @@ Relativity Application: The Field Finder solution allows you to extract certain 
 
 # Project Champion 
 ![TSD Services](http://www.tsdservices.com/wp-content/uploads/2015/03/TSD_Logo-TM-for-website.png)
+[logo]: http://www.tsdservices.com/wp-content/uploads/2015/03/TSD_Logo-TM-for-website.png "TSD Services"
 
 TSD Services has been a major contributor to this project.  If you are interested in having modifications made to this project, please reach out to TSD Services for an estimate. 
 [TSD Services](http://www.tsdservices.com)
