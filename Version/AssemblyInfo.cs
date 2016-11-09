@@ -14,8 +14,8 @@ using System.Runtime.InteropServices;
 
 [assembly: ComVisible(false)]
 [assembly: CLSCompliant(false)]
-[assembly: AssemblyVersion("1.0.0.6")]
-[assembly: AssemblyFileVersion("1.0.0.6")]
+[assembly: AssemblyVersion("2.0.0.30")]
+[assembly: AssemblyFileVersion("2.0.0.30")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTitle("FieldFinder")]
 [assembly: AssemblyDescription("The Field Finder solution allows you to extract certain text from a document's OCR text field and populate that text in specified workspace fields.")]
