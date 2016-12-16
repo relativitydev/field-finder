@@ -1,5 +1,5 @@
 # field-finder
-Relativity Application: The Field Finder solution allows you to extract certain text from a document's OCR text field and populate that text in specified workspace fields. 
+Project Champion - TSD, Relativity Application: The Field Finder solution allows you to extract certain text from a document's OCR text field and populate that text in specified workspace fields. 
 
 While this is an open source project on the kCura github account, there is no support available through kCura for this solution or code.  You are welcome to use the code and solution as you see fit within the confines of the license it is released under. However, if you are looking for support or modifications to the solution, we suggest reaching out to the Project Champion listed below.
 
