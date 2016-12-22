@@ -14,7 +14,7 @@ namespace TextExtractor.Helpers.Models
 		public Int32 ArtifactId { get; private set; }
 		public String StartMarker { get; private set; }
         public String StopMarker { get; private set; }
-		public TargetRule TargetRule { get; private set; }
+		public ITargetRule TargetRule { get; private set; }
 		public Artifact DestinationField { get; private set; }
 		public Boolean UpdatedValue { get; private set; }
 

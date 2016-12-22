@@ -15,16 +15,16 @@ namespace TextExtractor.TestHelpers.Integration.Settings
 			this.WorkspaceArtifactID = -1;
 			this.RsapiSettings = new RsapiSettings()
 			{
-					ServicesUri = new Uri("http://servername/Relativity.Services/"), //Update servername
-					User = "user", //Update user
-					Password = "password" //Update user password
+                ServicesUri = new Uri("http://servername/Relativity.Services/"), //Update servername
+					User = "User", //Update user
+					Password = "Password" //Update user password
 			};
 			this.DBContextSettings = new DBContextSettings()
 			{
-				Server = "SQLserver", //Update SQLserver
+                Server = "SQLserver", //Update SQLserver
 				Table = "EDDS",
 				User = "eddsdbo",
-				Password = "password" //Update eddsdbo password
+				Password = "Pass" //Update eddsdbo password
 			};
 		}
 	}
