@@ -1,6 +1,4 @@
-﻿//using kCura.Talos.Utility;
-
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Relativity.API;
 using TextExtractor.Helpers.Models;
 using TextExtractor.Helpers.NUnit.Dependencies;
@@ -12,15 +10,12 @@ using TextExtractor.TestHelpers.Fakes;
 using TextExtractor.TestHelpers.TestingTools;
 
 namespace TextExtractor.Helpers.NUnit.Tests
-{
-    //[ReportingSuite("KCD")]
+{    
 	[TestFixture]
 	public class ExtractorTargetTextTests : FakesFixture
 	{
-		[Description("")]
-        //[ReportingTest("a86b0bad-5d61-4616-aa84-a88556ef360d")]
 		[Category(TestCategory.UNIT)]
-		[Test]
+		[Test(Description = "When retrieving an instance of ExtractorTargetText, should not throw")]
 		public void Constructor()
 		{
 			var target = GetSystemUnderTest();
@@ -31,10 +26,8 @@ namespace TextExtractor.Helpers.NUnit.Tests
 			Assert.IsNotNull(target.DestinationField);
 		}
 
-		[Description("")]
-        //[ReportingTest("58d5ddf1-581a-4f7e-9bc7-2b44d2607c76")]
 		[Category(TestCategory.UNIT)]
-		[Test]
+        [Test(Description = "When ExtractorTargetText processes a document, should not throw")]
 		public void ProcessField()
 		{
 			var document = Dependencies.Pull<TextExtractorDocumentDependency>().Document;

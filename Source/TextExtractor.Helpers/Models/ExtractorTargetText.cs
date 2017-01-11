@@ -20,9 +20,9 @@ namespace TextExtractor.Helpers.Models
 
 		public Artifact RegeExStartMarkerArtifact { get; private set; }
 		public Artifact RegeExStopMarkerArtifact { get; private set; }
-		public ExtractorRegullarExpression RegExStartMarker {get; private set;}
+		public ExtractorRegularExpression RegExStartMarker {get; private set;}
 		public String PlainTextStartMarker { get; private set; }
-		public ExtractorRegullarExpression RegExStopMarker { get; private set; }
+		public ExtractorRegularExpression RegExStopMarker { get; private set; }
 		public String PlainTextStopMarker { get; private set; }
 
 		private readonly ExecutionIdentity ExecutionIdentity;
@@ -177,7 +177,7 @@ namespace TextExtractor.Helpers.Models
 						}
 
 						ArtifactFactory artifactFactory = new ArtifactFactory(ArtifactQueries, ServicesMgr, ErrorLogModel);
-						RegExStartMarker = artifactFactory.GetInstanceOfExtractorRegullarExpression(ExecutionIdentity.CurrentUser, WorkspaceArtifactId, RegeExStartMarkerArtifact.ArtifactID);
+						RegExStartMarker = artifactFactory.GetInstanceOfExtractorRegularExpression(ExecutionIdentity.CurrentUser, WorkspaceArtifactId, RegeExStartMarkerArtifact.ArtifactID);
 
 						StartMarker = RegExStartMarker.RegularExpression;
 
@@ -188,7 +188,7 @@ namespace TextExtractor.Helpers.Models
 						}
 						else
 						{
-							RegExStopMarker = artifactFactory.GetInstanceOfExtractorRegullarExpression(ExecutionIdentity.CurrentUser, WorkspaceArtifactId, RegeExStopMarkerArtifact.ArtifactID);
+							RegExStopMarker = artifactFactory.GetInstanceOfExtractorRegularExpression(ExecutionIdentity.CurrentUser, WorkspaceArtifactId, RegeExStopMarkerArtifact.ArtifactID);
 
 							StopMarker = RegExStopMarker.RegularExpression;
 						}

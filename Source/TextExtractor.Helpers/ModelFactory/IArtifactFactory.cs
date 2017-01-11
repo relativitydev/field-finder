@@ -12,6 +12,6 @@ namespace TextExtractor.Helpers.ModelFactory
 
 		ExtractorTargetText GetInstanceOfExtractorTargetText(ExecutionIdentity identity, Int32 workspaceArtifactId, Int32 extractorTargetTextArtifactId);
 
-		ExtractorRegullarExpression GetInstanceOfExtractorRegullarExpression(ExecutionIdentity identity, Int32 workspaceArtifactId, Int32 extractorTargetTextArtifactId);
+		ExtractorRegularExpression GetInstanceOfExtractorRegularExpression(ExecutionIdentity identity, Int32 workspaceArtifactId, Int32 extractorTargetTextArtifactId);
 	}
 }

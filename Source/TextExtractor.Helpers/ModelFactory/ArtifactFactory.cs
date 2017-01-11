@@ -45,11 +45,11 @@ namespace TextExtractor.Helpers.ModelFactory
 			return target;
 		}
 
-		public ExtractorRegullarExpression GetInstanceOfExtractorRegullarExpression(ExecutionIdentity identity, Int32 workspaceArtifactId, Int32 extractorRegularExpressionArtifactId)
+		public ExtractorRegularExpression GetInstanceOfExtractorRegularExpression(ExecutionIdentity identity, Int32 workspaceArtifactId, Int32 extractorRegularExpressionArtifactId)
 		{
 			var extractorRegullarExpressionRdo = ArtifactQueries.GetExtractorRegularExpressionRdo(ServicesMgr, identity, workspaceArtifactId, extractorRegularExpressionArtifactId);
 
-			var regEx = new ExtractorRegullarExpression(ArtifactQueries, workspaceArtifactId, extractorRegullarExpressionRdo, ErrorLogModel);
+			var regEx = new ExtractorRegularExpression(ArtifactQueries, workspaceArtifactId, extractorRegullarExpressionRdo, ErrorLogModel);
 
 			return regEx;
 		}

@@ -161,7 +161,7 @@ namespace TextExtractor.EventHandlers.ExtractorTargetText
 				if (maxExtractions < minExtractions)
 				{
 					response.Success = false;
-					response.Message = "Maximum Extractions must be greater than or equal to Minimum Extractions. ";
+					response.Message = Constant.ErrorMessages.TARGET_TEXT_MINIMUM_EXTRACTIONS_EXCEED_MAXIMUM_EXTRACTIONS;
 				}
 			}
 		}

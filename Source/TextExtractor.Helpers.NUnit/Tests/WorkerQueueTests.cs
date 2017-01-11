@@ -16,7 +16,7 @@ namespace TextExtractor.Helpers.NUnit.Tests
 	[Category(TestCategory.UNIT)]
 	public class WorkerQueueTests : FakesFixture
 	{
-		[Test]
+		[Test(Description = "Retrieve instance of worker queue")]
 		public void Constructor()
 		{
 			WorkerQueue queue = null;
@@ -27,7 +27,7 @@ namespace TextExtractor.Helpers.NUnit.Tests
 			Assert.Greater(queue.Records.Count(), 0);
 		}
 
-		[Test]
+        [Test(Description = "Retrieve instance of worker queue with no records")]
 		public void Constructor_NoRecords()
 		{
 			Dependencies.Pull<SqlQueryHelperDependency>()
@@ -39,7 +39,7 @@ namespace TextExtractor.Helpers.NUnit.Tests
 			Assert.AreEqual(0, queue.Records.Count());
 		}
 
-		[Test]
+        [Test(Description = "Worker queue process all records does not throw")]
 		public void ProcessAllRecords()
 		{
 			var queue = GetSystemUnderTest();

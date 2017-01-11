@@ -1,5 +1,4 @@
-﻿//using kCura.Talos.Utility;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using TextExtractor.Helpers.Models;
 using TextExtractor.Helpers.NUnit;
 using TextExtractor.Helpers.NUnit.Dependencies;
@@ -10,16 +9,13 @@ using TextExtractor.TestHelpers.Fakes;
 
 namespace TextExtractor.Agents.NUnit
 {
-    //[ReportingSuite("KCD")]
 	[TestFixture]
 	public class ManagerJobTests : FakesFixture
 	{
 		//Note: this test is below one second because all fake data (and there's alot) is
 		//generated recursively in the AgentDependencies instantiation
-		[Description("Executes entire agent with fake connection to Relativity, should complete without exceptions")]
-        //[ReportingTest("32619ddc-a589-4e26-9f3f-529e037a8d4b")]
 		[Category(TestCategory.UNIT)]
-		[Test]
+		[Test(Description = "Executes entire agent with fake connection to Relativity, should complete without exceptions")]
 		public void Execute()
 		{
 			var managerJob = GetSystemUnderTest();
@@ -28,7 +24,7 @@ namespace TextExtractor.Agents.NUnit
 		}
 
 		[Category(TestCategory.UNIT)]
-		[Test]
+        [Test(Description = "Executes entire agent with fake connection to Relativity and Extractor Sets are cancelled, should end execution without exceptions")]
 		public void Cancelled()
 		{
 			var managerJob = GetSystemUnderTest();
@@ -39,7 +35,7 @@ namespace TextExtractor.Agents.NUnit
 		}
 
 		[Category(TestCategory.UNIT)]
-		[Test]
+        [Test(Description = "Executes entire agent with fake connection to Relativity and No Manager Queue Records are found, should complete without exceptions")]
 		public void NoManagerQueueRecordsFound()
 		{
 			var managerJob = GetSystemUnderTest();

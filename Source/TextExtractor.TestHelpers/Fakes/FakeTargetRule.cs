@@ -20,6 +20,8 @@ namespace TextExtractor.TestHelpers.Fakes
 
         public bool CaseSensitive { get; set; }
 
+        public bool IncludeMarker { get; set; }
+
         public int Occurrence { get; set; }
 
         public int MaximumExtractions { get; set; }

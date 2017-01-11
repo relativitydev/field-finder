@@ -33,7 +33,7 @@ namespace TextExtractor.Agents.NUnit.Integration
 		}
 
 		[Category(TestCategory.INTEGRATION)]
-		[Test]
+		[Test(Description = "When worker job executes, should complete with no exceptions")]
 		public void WorkerExecute()
 		{
 			GivenTheWorkerJob();
@@ -44,7 +44,7 @@ namespace TextExtractor.Agents.NUnit.Integration
 		}
 
 		[Category(TestCategory.INTEGRATION)]
-		[Test]
+        [Description("When ExtractorSet has been cancelled, should remove records in worker queue")]
 		public void WorkerExecute_Cancelled()
 		{
 			GivenTheWorkerJob();

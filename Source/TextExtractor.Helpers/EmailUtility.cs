@@ -13,7 +13,7 @@ namespace TextExtractor.Helpers
 	{
 		private SmtpSettings smtpSettings;
 
-		internal EmailUtility(SmtpSettings smtpSettings)
+		public EmailUtility(SmtpSettings smtpSettings)
 		{
 			this.smtpSettings = smtpSettings;
 		}

@@ -161,6 +161,34 @@ namespace TextExtractor.Helpers.NUnit.Data
 			return rdo;
 		}
 
+        public RDO GetExtractorRegularExpressionRdo()
+        {
+            var rdo = new RDO(this.Random.Number());
+
+            rdo.ArtifactTypeGuids = new List<Guid>() { Constant.Guids.ObjectType.ExtractorRegularExpression };
+
+            // Generate all fake fields 
+            var extractorRegularExpressionFields = new List<FieldValue>()
+			 {
+				 new FieldValue(Constant.Guids.Fields.ExtractorRegularExpression.Name)
+					 {
+						 ValueAsFixedLengthText = "Test Name"
+					 },
+				 new FieldValue(Constant.Guids.Fields.ExtractorRegularExpression.RegularExpression)
+					 {
+						 Value = Random.Word()
+					 },
+				 new FieldValue(Constant.Guids.Fields.ExtractorRegularExpression.Description)
+					 {
+						 ValueAsLongText = "Test Description"
+					 }
+			 };
+
+            rdo.Fields = extractorRegularExpressionFields;
+
+            return rdo;
+        }
+
 		private FieldValueList<Artifact> GetTextExtractorFields(int number = 1)
 		{
 			var fields = new FieldValueList<Artifact>();
@@ -211,6 +239,10 @@ namespace TextExtractor.Helpers.NUnit.Data
 					 {
 						 ValueAsYesNo = Random.Boolean()
 					 },
+                 new FieldValue(Constant.Guids.Fields.ExtractorTargetText.IncludeMarker)
+				     {
+					     ValueAsYesNo = Random.Boolean()
+				     },
 				 new FieldValue(Constant.Guids.Fields.ExtractorTargetText.TrimStyle)
 					 {
 						 ValueAsSingleChoice = trimStyleChoice

@@ -1,6 +1,4 @@
-﻿//using kCura.Talos.Utility;
-
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Relativity.API;
 using TextExtractor.Helpers.ModelFactory;
 using TextExtractor.Helpers.NUnit.Dependencies;
@@ -12,7 +10,6 @@ using TextExtractor.TestHelpers.TestingTools;
 
 namespace TextExtractor.Helpers.NUnit.Tests
 {
-    //[ReportingSuite("KCD")]
 	[TestFixture]
 	class ArtifactFactoryTests : FakesFixture
 	{
@@ -86,7 +83,6 @@ namespace TextExtractor.Helpers.NUnit.Tests
 		#region ExtractorTargetText
 
 		[Description("When retrieving an instance of ExtractorTargetText, should not throw")]
-        //[ReportingTest("bacd9147-09ef-4808-b79e-bf4a8c555879")]
 		[Category(TestCategory.UNIT)]
 		[Test]
 		public void GetInstanceOfExtractorTargetText_NoThrow()
@@ -98,7 +94,6 @@ namespace TextExtractor.Helpers.NUnit.Tests
 		}
 
 		[Description("When retrieving an instance of ExtractorTargetText, should return a valid object")]
-        //[ReportingTest("49fcac06-9c93-48a4-b60b-8ce93e5b6e04")]
 		[Category(TestCategory.UNIT)]
 		[Test]
 		public void GetInstanceOfExtractorTargetText_ReturnsObj()

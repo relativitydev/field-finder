@@ -1,5 +1,4 @@
 ﻿using System;
-//using kCura.Talos.Utility;
 using Moq;
 using NUnit.Framework;
 using Relativity.API;
@@ -42,7 +41,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("FE9D5EB4-DA9D-4CBD-B15B-77F538721C9E")]
 		[Description("This will test the Golden Flow when no Text Extractor Profiles are present in the Manager and Worker queue tables.")]
 		public void TextExtractorProfile_PreSave_Golden_Flow()
 		{
@@ -64,7 +62,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("C8C336E6-888B-426B-8C2C-1B5A52BDF57D")]
 		[Description("This will test when one Text Extractor Profile record is present in the Manager queue tables.")]
 		public void TextExtractorProfile_PreSave_Record_Found_In_Manager_Queue()
 		{
@@ -86,7 +83,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("555B7DBA-0713-435F-93AE-3E0C61B61F61")]
 		[Description("This will test when one Text Extractor Profile record is present in the Worker queue tables.")]
 		public void TextExtractorProfile_PreSave_Record_Found_In_Worker_Queue()
 		{
@@ -108,7 +104,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("DEAA2E4F-D3D5-4BD4-B072-8574C7A866AA")]
 		[Description("This will test when more than one Text Extractor Profile record is present in the Manager and Worker queue tables.")]
 		public void TextExtractorProfile_PreSave_Record_Found_In_Manager_And_Worker_Queue()
 		{
@@ -130,7 +125,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("81F235BD-6E3E-410C-8A87-159F9EE90131")]
 		[Description("This will test when an Exception is thrown.")]
 		public void TextExtractorProfile_PreSave_Exception_SQLQueryHelper()
 		{

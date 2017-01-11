@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-//using kCura.Talos.Utility;
 using Moq;
 using NUnit.Framework;
 using Relativity.API;
@@ -59,7 +58,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("E0E0DF91-0D63-456F-8330-ABBF0B15E000")]
 		[Description("This will test the Golden Flow when the Submit button is clicked (Golden Path).")]
 		public void ManageJobConsole_Submit_Golden_Flow()
 		{
@@ -90,7 +88,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("F72029F9-2FCC-4AAB-9F77-AE93A75B377F")]
 		[Description("This will test the Golden Flow when the Cancel button is clicked (Golden Path).")]
 		public void ManageJobConsole_Cancel_Golden_Flow()
 		{
@@ -114,7 +111,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("A5247BC3-1133-46D7-B0F6-C369296EC076")]
 		[Description("This will test when the Cancel button is clicked (Golden Path) and the status of the Extractor Set is Complete.")]
 		public void ManageJobConsole_Cancel_Set_Complete()
 		{
@@ -131,7 +127,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("5044D286-9969-47A9-9555-377AE19C68A6")]
 		[Description("This will test when the Submit button is clicked and a record already exists on the Manager queue table.")]
 		public void ManageJobConsole_Submit_With_Manager_Record()
 		{
@@ -170,7 +165,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("20B871A4-E411-4192-8885-04C1EFE6BFCA")]
 		[Description("This will test when a button with a name other than Submit or Cancel is clicked.")]
 		public void ManageJobConsole_Erroneous_Button_Golden_Flow()
 		{
@@ -187,7 +181,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("DE2A8B78-FF5A-4CD0-ACE0-BB8EA341DD5C")]
 		[Description("This will test when an Exception is thrown.")]
 		public void ManageJobConsole_Exception_SQLQueryHelper()
 		{
@@ -199,6 +192,7 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
+        [Description("This will test when an Exception is thrown.")]
 		public void ManageJobConsole_EXCEPTION()
 		{
 			//Arrange

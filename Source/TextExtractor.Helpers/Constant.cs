@@ -75,6 +75,7 @@ namespace TextExtractor.Helpers
 					public static readonly Guid RegularExpressionStopMarker = new Guid("BE9E2560-F4A3-458F-887D-FBFF42870E9E");
 					public static readonly Guid PlainTextStopMarker = new Guid("81FCA6AF-5BFF-4DA8-844D-D17D5029B92F");
 					public static readonly Guid ApplyStopMarker = new Guid("C0EA46EB-0402-4B37-95B2-815E3E676E6A");
+					public static readonly Guid IncludeMarker = new Guid("C0B5742D-5E7C-4E49-A03F-F03550C65E02");
 
 				}
 
@@ -269,6 +270,7 @@ namespace TextExtractor.Helpers
 			public const String TARGET_TEXT_OCCURENCE_MAXIMUM_EXCEEDED = "Please make sure to enter a positive value less than or equal to {0} for the Occurrence field.";
 			public const String TARGET_TEXT_MAXIMUM_EXTRACTIONS_MAXIMUM_EXCEEDED = "Please make sure to enter a positive value less than or equal to {0} for the Maximum Extractioms field.";
 			public const String TARGET_TEXT_MINIMUM_EXTRACTIONS_MAXIMUM_EXCEEDED = "Please make sure to enter a positive value less than or equal to {0} for the Minimum Extractioms field.";
+            public const String TARGET_TEXT_MINIMUM_EXTRACTIONS_EXCEED_MAXIMUM_EXTRACTIONS = "Maximum Extractions must be greater than or equal to Minimum Extractions. ";
 			public const String TARGET_TEXT_CHARACTERS_NEGATIVE = "Please make sure to enter a positive value for the Number of Characters field.";
 			public const String TARGET_TEXT_CHARACTERS_MAXIMUM_EXCEEDED = "Please make sure to enter a positive value less than or equal to {0} for the Number of Characters field.";
 			public const String DEFAULT_CONVERT_TO_EXTRACTOR_TARGET_TEXT_ERROR_MESSAGE = "An error occured when converting extractorTargetTextRdo to ExtractorTargetText";

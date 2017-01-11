@@ -1,5 +1,4 @@
-﻿//using kCura.Talos.Utility;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using TextExtractor.Helpers.Models;
 using TextExtractor.Helpers.NUnit.Dependencies;
 using TextExtractor.Helpers.NUnit.Dependencies.Seams;
@@ -11,12 +10,10 @@ using TextExtractor.TestHelpers.TestingTools;
 
 namespace TextExtractor.Helpers.NUnit.Tests
 {
-    //[ReportingSuite("KCD")]
 	[TestFixture]
 	public class ExtractorProfileTests : FakesFixture
 	{
 		[Description("When the profile is created, should set its properties")]
-        //[ReportingTest("34fa8b2d-7b20-4a56-9e33-e1cff49822e1")]
 		[Category(TestCategory.UNIT)]
 		[Test]
 		public void Constructor()
@@ -29,7 +26,6 @@ namespace TextExtractor.Helpers.NUnit.Tests
 		}
 
 		[Description("When processing all fields, should not throw")]
-        //[ReportingTest("49d406f1-43a8-4a86-a3f7-a5a4774c6464")]
 		[Category(TestCategory.UNIT)]
 		[Test]
 		public void ProcessAllFields()
@@ -45,7 +41,6 @@ namespace TextExtractor.Helpers.NUnit.Tests
 		}
 
 		[Description("When there are no extractor target texts, should not call process field")]
-        //[ReportingTest("49d406f1-43a8-4a86-a3f7-a5a4774c6464")]
 		[Category(TestCategory.UNIT)]
 		[Test]
 		public void ProcessAllFields_NoTargetTexts()
@@ -62,7 +57,6 @@ namespace TextExtractor.Helpers.NUnit.Tests
 		}
 
 		[Description("When the job has been cancelled, should not call process field")]
-        //[ReportingTest("06a25d58-29d8-4f32-b0aa-ca2279519a54")]
 		[Category(TestCategory.UNIT)]
 		[Test]
 		public void ProcessAllFields_Cancelled()

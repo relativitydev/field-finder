@@ -1,5 +1,4 @@
 ﻿using System;
-//using kCura.Talos.Utility;
 using NUnit.Framework;
 using Relativity.API;
 using TextExtractor.Helpers;
@@ -31,7 +30,6 @@ namespace TextExtractor.Agents.NUnit.Integration
 		}
 
 		[Description("Executes manager agent with a real connection to Relativity, should complete without exceptions")]
-        //[ReportingTest("728a9085-0341-4593-93e0-dea61052e4a2")]
 		[Category(TestCategory.INTEGRATION)]
 		[Test]
 		public void ManagerExecute()
@@ -48,7 +46,6 @@ namespace TextExtractor.Agents.NUnit.Integration
 		}
 
 		[Description("When the agent has been cancelled by the user, should end execution")]
-        //[ReportingTest("F455CBE2-6588-44B1-8256-9D77760092D4")]
 		[Category(TestCategory.INTEGRATION)]
 		[Test]
 		public void ManagerExecute_Cancelled()
@@ -62,6 +59,7 @@ namespace TextExtractor.Agents.NUnit.Integration
 			ShouldNotInsertJobsIntoTheWorkerQueue();
 		}
 
+        [Description("When Saved Search is missing, should not insert records into worker queue")]
 		[Category(TestCategory.INTEGRATION)]
 		[Test]
 		public void ManagerExecute_MissingSavedSearch()

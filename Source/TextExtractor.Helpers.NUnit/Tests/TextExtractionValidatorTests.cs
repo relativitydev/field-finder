@@ -33,33 +33,33 @@ namespace TextExtractor.Helpers.NUnit.Tests
             TargetRule = null;
 		}
 
-		[Test]
+		[Test(Description="Validator with null text source throws exception")]
 		public void InvalidTextSourceTest()
 		{
 			Assert.Throws<ArgumentNullException>(() => Sut.Validate(null, MATCHING_TEXT, TargetRule));
 		}
 
-		[Test]
+        [Test(Description = "Validator with null marker throws exception")]
 		public void InvalidMatchingTextTest()
 		{
             Assert.Throws<ArgumentNullException>(() => Sut.Validate(TEXT_SOURCE, null, TargetRule));
 		}
 
-		[Test]
+        [Test(Description = "Validator with negative carachter lenght throws exception")]
 		public void InvalidCharacterLengthTest()
 		{
             TargetRule.CharacterLength = -1;
             Assert.Throws<CustomExceptions.TextExtractorException>(() => Sut.Validate(TEXT_SOURCE, MATCHING_TEXT, TargetRule), Constant.ErrorMessages.CHARACTER_LENGTH_IS_NEGATIVE);
 		}
 
-		[Test]
+        [Test(Description = "Validator with negative occurence throws exception")]
 		public void InvalidOccurrenceTest()
 		{
             TargetRule.Occurrence = -1;
             Assert.Throws<CustomExceptions.TextExtractorException>(() => Sut.Validate(TEXT_SOURCE, MATCHING_TEXT, TargetRule), Constant.ErrorMessages.OCCURRENCE_LENGTH_IS_NEGATIVE);
 		}
 
-		[Test]
+        [Test(Description = "Validator with marker length longer than text source length throws exception")]
 		public void MatchingTextLengthGreaterThanTextSourceLengthTest()
 		{
 			Assert.Throws<CustomExceptions.TextExtractorException>(() => Sut.Validate("abc", "abcd", TargetRule), Constant.ErrorMessages.MATCHING_TEXT_LENGTH_GREATER_THAN_TEXT_SOURCE_LENGTH);

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Linq;
-//using kCura.Talos.Utility;
 using Moq;
 using NUnit.Framework;
 using Relativity.API;
@@ -15,7 +14,6 @@ using TextExtractor.TestHelpers.Fakes;
 
 namespace TextExtractor.Helpers.NUnit.Tests
 {
-    //[ReportingSuite("KCD")]
 	[TestFixture]
 	[Category(TestCategory.INTEGRATION)]
 	[Category(TestCategory.UNIT)]
@@ -65,7 +63,6 @@ namespace TextExtractor.Helpers.NUnit.Tests
 		#region GetNextBatchOfRecords
 
 		[Description("When valid rows are fed from the queue, should convert into an enumeration of ManagerQueueJob")]
-        //[ReportingTest("21d9ec88-d5ad-46ed-a465-0c1a9382d764")]
 		[Test]
 		public void GetNextBatchOfRecords()
 		{
@@ -79,7 +76,6 @@ namespace TextExtractor.Helpers.NUnit.Tests
 		}
 
 		[Description("When a table without rows returns from the queue, should indicate there are no jobs")]
-        //[ReportingTest("8066c93a-49fb-436c-a80a-6462ba7eb9ab")]
 		[Test]
 		public void GetNextBatchOfRecords_NoRecords()
 		{

@@ -12,6 +12,7 @@ namespace TextExtractor.Helpers.Models
 		public Int32 CharacterLength { get; set; }
 		public Constant.TrimStyleEnum TrimStyleEnum { get; set; }
 		public Boolean CaseSensitive { get; set; }
+        public Boolean IncludeMarker { get; set; }
 		public Int32 Occurrence { get; set; }
 
 		public Int32 MaximumExtractions { get; set; }
@@ -38,6 +39,9 @@ namespace TextExtractor.Helpers.Models
 				SetTrim(extractorTargetTextRdo);
 
 				SetMarkerType(extractorTargetTextRdo);
+
+				bool? includeMarker = extractorTargetTextRdo.Fields.Get(Constant.Guids.Fields.ExtractorTargetText.IncludeMarker).ValueAsYesNo;
+				IncludeMarker = (includeMarker != null) ? includeMarker.Value : false;
 
 				int? characterLength = extractorTargetTextRdo.Fields.Get(Constant.Guids.Fields.ExtractorTargetText.NumberofCharacters).ValueAsWholeNumber;
 				CharacterLength = (characterLength == null) ? Constant.Sizes.EXTRACTOR_TARGET_TEXT_CHARACTERS_MAXIMUM : Convert.ToInt32(characterLength);

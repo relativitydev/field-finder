@@ -1,5 +1,4 @@
 ﻿using System;
-//using kCura.Talos.Utility;
 using NUnit.Framework;
 using Relativity.API;
 using TextExtractor.Helpers;
@@ -11,7 +10,6 @@ using TextExtractor.TestHelpers;
 
 namespace TextExtractor.Agents.NUnit.Integration
 {
-    //[ReportingSuite("KCD")]
 	[TestFixture]
 	[Category(TestCategory.INTEGRATION)]
 	public class AllAgentIntegrationTests : IntegrationFixture
@@ -44,9 +42,7 @@ namespace TextExtractor.Agents.NUnit.Integration
 			WhenTheAgentJobExceptionWrapperExecutesTheManager();
 		}
 
-		[Description("Executes manager agent with a real connection to Relativity, should complete without exceptions")]
-        //[ReportingTest("728a9085-0341-4593-93e0-dea61052e4a2")]
-		[Test]
+		[Test(Description = "Executes manager agent with a real connection to Relativity, should complete without exceptions")]
 		public void ManagerExecute()
 		{
 			GivenTheManagerJob();
@@ -61,9 +57,7 @@ namespace TextExtractor.Agents.NUnit.Integration
 			ShouldHaveExtractorSetStatusOf(Constant.ExtractorSetStatus.IN_PROGRESS_MANAGER_COMPLETE);
 		}
 
-		[Description("When the agent has been cancelled by the user, should end execution")]
-        //[ReportingTest("F455CBE2-6588-44B1-8256-9D77760092D4")]
-		[Test]
+		[Test(Description = "When the agent has been cancelled by the user, should end execution")]
 		public void ManagerExecute_Cancelled()
 		{
 			GivenTheManagerJob();
@@ -75,7 +69,7 @@ namespace TextExtractor.Agents.NUnit.Integration
 			ShouldRemoveRecordsInManagerQueue();
 		}
 
-		[Test]
+        [Test(Description = "When executed should remove records in worker queue")]
 		public void WorkerExecute()
 		{
 			GivenTheWorkerJob();
@@ -87,7 +81,7 @@ namespace TextExtractor.Agents.NUnit.Integration
 			ShouldRemoveRecordsInWorkerQueue();
 		}
 
-		[Test]
+        [Test(Description = "When the ExtractorSet has been cancelled, should remove records in queue")]
 		public void WorkerExecute_Cancelled()
 		{
 			GivenTheWorkerJob();
@@ -99,7 +93,7 @@ namespace TextExtractor.Agents.NUnit.Integration
 			ShouldRemoveRecordsInWorkerQueue();
 		}
 
-		[Test]
+        [Test(Description = "When all agents are executed, should complete with no exceptions")]
 		public void AllAgentsExecute()
 		{
 			GivenTheManagerJob();

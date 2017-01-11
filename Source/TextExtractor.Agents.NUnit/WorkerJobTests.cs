@@ -1,5 +1,4 @@
-﻿//using kCura.Talos.Utility;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Relativity.API;
 using TextExtractor.Helpers;
 using TextExtractor.Helpers.Models;
@@ -11,15 +10,12 @@ using TextExtractor.TestHelpers.Fakes;
 
 namespace TextExtractor.Agents.NUnit
 {
-    //[ReportingSuite("KCD")]
 	[TestFixture]
 	[Category(TestCategory.INTEGRATION)]
 	[Category(TestCategory.UNIT)]
 	public class WorkerJobTests : FakesFixture
 	{
-		[Description("Executes entire agent with fake connection to Relativity, should complete without exceptions")]
-        //[ReportingTest("83b66a43-014d-4869-954f-e259b33dd90f")]
-		[Test]
+		[Test(Description = "Executes entire agent with fake connection to Relativity, should complete without exceptions")]
 		public void Execute()
 		{
 			var workerJob = GetSystemUnderTest();
@@ -27,7 +23,7 @@ namespace TextExtractor.Agents.NUnit
 			Assert.DoesNotThrow(() => workerJob.Execute());
 		}
 
-		[Test]
+        [Test(Description = "Executes entire agent with fake connection to Relativity and No Records in Queue are found, should complete without exceptions")]
 		public void Execute_NoRecords()
 		{
 			Dependencies.Pull<SqlQueryHelperDependency>()

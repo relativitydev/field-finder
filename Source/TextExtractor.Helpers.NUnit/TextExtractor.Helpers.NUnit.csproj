@@ -67,8 +67,10 @@
     <Compile Include="Data\TableGenerator.cs" />
     <Compile Include="Dependencies\ArtifactFactoryDependency.cs" />
     <Compile Include="Dependencies\ErrorQueueDependency.cs" />
+    <Compile Include="Dependencies\ExtractorRegularExpressionDependency.cs" />
     <Compile Include="Dependencies\ManagerJobDependency.cs" />
     <Compile Include="Dependencies\ManagerQueueDependency.cs" />
+    <Compile Include="Dependencies\SmtpSettingsDependency.cs" />
     <Compile Include="Dependencies\TextExtractorDocumentDependency.cs" />
     <Compile Include="Tests\ArtifactFactoryTests.cs" />
     <Compile Include="Dependencies\Seams\ArtifactQueriesDependency.cs" />
@@ -85,7 +87,9 @@
     <Compile Include="Dependencies\ExtractorSetReportingDependency.cs" />
     <Compile Include="Dependencies\WorkerQueueRecordDependency.cs" />
     <Compile Include="Tests\DocumentBatchTests.cs" />
+    <Compile Include="Tests\EmailUtilityTests.cs" />
     <Compile Include="Tests\ExtractorProfileTests.cs" />
+    <Compile Include="Tests\ExtractorRegularExpressionTests.cs" />
     <Compile Include="Tests\ExtractorTargetTextTests.cs" />
     <Compile Include="Tests\ManagerQueueRecordTests.cs" />
     <Compile Include="Fixtures\FakesFixture.cs" />

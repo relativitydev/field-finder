@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-//using kCura.Talos.Utility;
 using Moq;
 using NUnit.Framework;
 using Relativity.API;
@@ -45,7 +44,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("3CB2FF85-B3B9-4E44-8BC9-6B546533233D")]
 		[Description("This will test the Golden Flow when no Text Extractor Sets are present in the Manager and Worker queue tables.")]
 		public void TextExtractorSet_PreSave_Golden_Flow()
 		{
@@ -67,7 +65,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("D77120E8-C449-49F0-89F1-739902888E29")]
 		[Description("This will test when one Text Extractor Set record is present in the Manager queue tables.")]
 		public void TextExtractorSet_PreSave_Record_Found_In_Manager_Queue()
 		{
@@ -89,7 +86,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("2F6B38C8-F5D9-44B8-8777-C14494981BA8")]
 		[Description("This will test when one Text Extractor Set record is present in the Worker queue tables.")]
 		public void TextExtractorSet_PreSave_Record_Found_In_Worker_Queue()
 		{
@@ -111,7 +107,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 	
 		[Test]
-        //[ReportingTest("4646C406-0B1C-410D-9508-B05C4F0E4ED5")]
 		[Description("This will test when more than one Text Extractor Set record is present in the Manager and Worker queue tables.")]
 		public void TextExtractorSet_PreSave_Record_Found_In_Manager_And_Worker_Queue()
 		{
@@ -133,7 +128,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("226A3FBD-EB8E-447F-AE1E-111B684F3850")]
 		[Description("This will test when an Exception is thrown.")]
 		public void TextExtractorSet_PreSave_Exception_SQLQueryHelper()
 		{
@@ -153,7 +147,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("7EDE59AB-19AD-4482-82F9-8B68B974D845")]
 		[Description("This will test the Golden Flow when the status of the current Text Extractor Set record is null and the user is trying to delete the record.")]
 		public void TextExtractorSet_PreDelete_Golden_Flow()
 		{
@@ -174,7 +167,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 
 		[Test]
-        //[ReportingTest("7EDE59AB-19AD-4482-82F9-8B68B974D845")]
 		[Description("This will test the Golden Flow when the status of the current Text Extractor Set record is null and the user is trying to delete the record.")]
 		public void TextExtractorSet_PreDelete_One_Set_With_Non_Null_Status()
 		{
@@ -196,7 +188,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		}
 		
 		[Test]
-        //[ReportingTest("8C253C7E-1AD6-4C71-BEA0-F9B48182001A")]
 		[Description("This will test the Golden Flow when the status of the all the selected Text Extractor Set records are null and the user is trying to mass delete the records.")]
 		public void TextExtractorSet_PreMassDelete_Golden_Flow()
 		{
@@ -219,7 +210,6 @@ namespace TextExtractor.EventHandlers.NUnit.Tests
 		[TestCase(1)]
 		[TestCase(100)]
 		[Test]
-        //[ReportingTest("76F67EAB-B10C-4B1A-A330-5155FDAAA4FE")]
 		[Description("This will test when the multiple Set Statuses for some of the selected Text Extractor Set records are set and the user is trying to mass delete the records.")]
 		public void TextExtractorSet_PreMassDelete_Set_Statuses_Exist(int setRecords)
 		{

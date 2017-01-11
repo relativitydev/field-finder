@@ -59,8 +59,8 @@
     <Compile Include="..\..\Version\AssemblyInfo.cs" />
     <Compile Include="Application\PopulatePredefinedRegularExpression.cs" />
     <Compile Include="ExtractorProfile\TextExtractorProfilePreCascadeDelete.cs" />
-    <Compile Include="ExtractorRegularExpression\RegularExpressionJob.cs" />
-    <Compile Include="ExtractorRegularExpression\RegularExpressionPreCascadeDelete.cs" />
+    <Compile Include="ExtractorRegEx\RegularExpressionJob.cs" />
+    <Compile Include="ExtractorRegEx\RegularExpressionPreCascadeDelete.cs" />
     <Compile Include="ExtractorSet\ConsoleJob.cs" />
     <Compile Include="ExtractorSet\TextExtractorSetPreMassDelete.cs" />
     <Compile Include="ExtractorTargetText\TargetTextPageInteraction.cs" />

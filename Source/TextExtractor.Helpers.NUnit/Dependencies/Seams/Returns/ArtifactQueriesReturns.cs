@@ -12,6 +12,7 @@ namespace TextExtractor.Helpers.NUnit.Dependencies.Seams.Returns
 		public RDO ExtractorProfileRdo;
 		public RDO ExtractorTargetTextRdo;
 		public RDO ExtractorSetRdo;
+        public RDO ExtractorRegularExpressionRdo;
 		public String JobStatus;
 		public String DocumentTextFieldValue;
 
@@ -37,6 +38,8 @@ namespace TextExtractor.Helpers.NUnit.Dependencies.Seams.Returns
 			ExtractorProfileRdo = generator.GetExtractorProfileRdo(NumberOfFieldsOnTemplate);
 			ExtractorTargetTextRdo = generator.GetExtractorTargetTextRdo();
 			ExtractorSetRdo = generator.GetExtractorSetRdo();
+            ExtractorRegularExpressionRdo = generator.GetExtractorRegularExpressionRdo();
+
 
 			// Returns a random status
 			object[] possibleStatuses =

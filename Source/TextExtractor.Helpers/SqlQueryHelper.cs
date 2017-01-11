@@ -798,7 +798,6 @@ namespace TextExtractor.Helpers
 			{
 				settings = new SmtpSettings();
 
-				// ENHANCEMENT: Good task to figure out a better way to map the values to SmtpSetting object (than using switch-statement)
 				string name;
 				string value;
 				foreach (DataRow dataRow in result.Rows)

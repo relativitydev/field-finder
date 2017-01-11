@@ -13,7 +13,7 @@ namespace TextExtractor.Helpers.NUnit.Tests
 	[Category(TestCategory.UNIT)]
 	public class ExtractorSetHistoryTests : FakesFixture
 	{
-		[Test]
+		[Test(Description = "Extractor Set History Constructor does not throw exception")]
 		public void Constructor()
 		{
 			var random = Dependencies.Pull<RandomGenerator>();

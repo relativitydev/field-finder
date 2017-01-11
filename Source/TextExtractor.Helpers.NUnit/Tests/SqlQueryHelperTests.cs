@@ -29,7 +29,7 @@ namespace TextExtractor.Helpers.NUnit.Tests
 			this.Sut = null;
 		}
 
-		[Test]
+		[Test(Description = "Get instance of a batch datatable, column count and that there is next batch in worker queue")]
 		public void RetrieveNextBatchInWorkerQueueTests()
 		{
 			//Arrange

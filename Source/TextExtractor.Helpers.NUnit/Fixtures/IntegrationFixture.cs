@@ -27,17 +27,17 @@ namespace TextExtractor.Helpers.NUnit.Fixtures
 		{
 			var clientSettings = new RsapiSettings()
 			{
-				ServicesUri = new Uri("http://servername/Relativity.Services/"),
-                User = "User",
-				Password = "Password"
+				ServicesUri = new Uri("http://tsdrelatest01.cloudapp.net/Relativity.Services/"),
+				User = "relativity.admin@kcura.com",
+				Password = "Test1234!"
 			};
 
 			var contextSettings = new DBContextSettings()
 			{
-                Server = "SQLServer",
+                Server = "tsdrelatest01.cloudapp.net",
 				Table = "EDDS",
 				User = "eddsdbo",
-				Password = "Password"
+				Password = "edds"
 			};
 
 			var settings = new IntegrationSettings()
