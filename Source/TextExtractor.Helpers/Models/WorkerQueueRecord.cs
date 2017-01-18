@@ -88,6 +88,18 @@ namespace TextExtractor.Helpers.Models
 					//Update ExtractorSet Details field
 					ArtifactQueries.UpdateExtractorSetDetails(ServicesMgr, ExecutionIdentity.CurrentUser, WorkspaceArtifactId, ExtractorSet.ArtifactId, Constant.ExtractorSetStatus.DetailMessages.COMPLETE_WITH_ERRORS_DETAILS);
 				}
+                else if (textSource.Length > Constant.Sizes.EXTRACTOR_TARGET_TEXT_SOURCE_LENGTH_MAXIMUM)
+                {
+                    String extractorSetName = ArtifactQueries.GetExtractorSetNameForArtifactId(ServicesMgr, ExecutionIdentity.CurrentUser, WorkspaceArtifactId, ExtractorSet.ArtifactId);
+
+                    string sourceLengthMaximumExceeded = string.Format(Constant.ErrorMessages.TARGET_TEXT_SOURCE_LENGTH_EXCEEDS_MAXIMUM, Constant.Sizes.EXTRACTOR_TARGET_TEXT_SOURCE_LENGTH_MAXIMUM);
+
+                    var fieldValue = string.Format(Constant.ErrorMessages.DOCUMENT_ERROR_ENCOUNTERED, sourceLengthMaximumExceeded , extractorSetName);
+                    ArtifactQueries.AppendToDocumentLongTextFieldValue(ServicesMgr, ExecutionIdentity.CurrentUser, WorkspaceArtifactId, DocumentArtifactId, Constant.Guids.Fields.Document.TextExtractorErrors, fieldValue);
+
+                    //Update ExtractorSet Details field
+                    ArtifactQueries.UpdateExtractorSetDetails(ServicesMgr, ExecutionIdentity.CurrentUser, WorkspaceArtifactId, ExtractorSet.ArtifactId, Constant.ExtractorSetStatus.DetailMessages.COMPLETE_WITH_ERRORS_DETAILS);
+                }
 				else
 				{
 					var textExtractorDocument = new ExtractorSetDocument(DocumentArtifactId, textSource).GetInstance();

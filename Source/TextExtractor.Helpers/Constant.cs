@@ -179,6 +179,7 @@ namespace TextExtractor.Helpers
 			public const Int32 MANAGER_QUEUE_BATCH_SIZE = 5;
 			public const Int32 SAVED_SEARCH_BATCH_SIZE = 1000;
 			public const Int32 WORKER_BATCH_SIZE = 10;
+            public const Int32 EXTRACTOR_TARGET_TEXT_SOURCE_LENGTH_MAXIMUM = 4000000;
 			public const Int32 EXTRACTOR_TARGET_TEXT_OCCURENCE_MINIMUM = 1;
 			public const Int32 EXTRACTOR_TARGET_TEXT_OCCURENCE_MAXIMUM = 100;
 			public const Int32 EXTRACTOR_TARGET_TEXT_CHARACTERS_MINIMUM = 1;
@@ -257,6 +258,7 @@ namespace TextExtractor.Helpers
 			public const String EXTRACTION_SET_CANNOT_DELETE_MULTIPLE_RECORD = "At least one selected Extractor Set record cannot be deleted as it has already been submitted for processing.";
 			public const String EXTRACTION_SET_CANNOT_DELETE_CURRENT_RECORD_HISTORY = "At least one Extractor Set record cannot be deleted as dependencies currently exist.";
 			public const String EXTRACTION_PROFILE_CANNOT_DELETE_MULTIPLE_RECORD_QUEUE = "At least one Extractor Profile record cannot be deleted as records exist in the Agent queue tables.";
+            public const String TARGET_TEXT_SOURCE_LENGTH_EXCEEDS_MAXIMUM = "Target Text Source Field exceeds Maximum length of {0} characters";
 			public const String EXTRACTION_TARGET_TEXT_RECORD_DEPENDENCY = "At least one Extractor Target Text record is currently associated to one or more Extractor Profiles and cannot be deleted.";
 			public const String FAILEDQUERY_SAVEDSEARCH = "Saved search query failed to return document results";
 			public const String CHARACTER_LENGTH_IS_NEGATIVE = "CharacterLength cannot be negative.";
