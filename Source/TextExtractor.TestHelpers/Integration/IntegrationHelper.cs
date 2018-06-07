@@ -61,5 +61,30 @@ namespace TextExtractor.TestHelpers.Integration
 		{
 			return this.Settings.WorkspaceArtifactID;
 		}
+
+		public ILogFactory GetLoggerFactory()
+		{
+			throw new NotImplementedException();
+		}
+
+		public string ResourceDBPrepend()
+		{
+			throw new NotImplementedException();
+		}
+
+		public string ResourceDBPrepend(IDBContext context)
+		{
+			throw new NotImplementedException();
+		}
+
+		public string GetSchemalessResourceDataBasePrepend(IDBContext context)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Guid GetGuid(int workspaceID, int artifactID)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
