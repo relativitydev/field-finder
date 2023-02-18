@@ -69,7 +69,7 @@
     <Compile Include="ModelFactory\IArtifactFactory.cs" />
     <Compile Include="Models\DocumentBatch.cs" />
     <Compile Include="Models\ErrorLogModel.cs" />
-    <Compile Include="Models\ExtractorRegullarExpression.cs" />
+    <Compile Include="Models\ExtractorRegularExpression.cs" />
     <Compile Include="Models\ManagerQueue.cs" />
     <Compile Include="Models\ManagerQueueRecord.cs" />
     <Compile Include="Models\ExtractorSetDocument.cs" />

@@ -58,6 +58,7 @@
     <Compile Include="Fakes\FakeHelper.cs" />
     <Compile Include="Fakes\FakeRsapiClient.cs" />
     <Compile Include="Fakes\FakeServicesMgr.cs" />
+    <Compile Include="Fakes\FakeTargetRule.cs" />
     <Compile Include="Integration\IntegrationDBContext.cs" />
     <Compile Include="Integration\IntegrationHelper.cs" />
     <Compile Include="Integration\IntegrationRsapiClient.cs" />
@@ -74,6 +75,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextExtractor.Helpers\TextExtractor.Helpers.csproj">
+      <Project>{8f4cda45-eaf3-4b40-a7a9-f312b7664abc}</Project>
+      <Name>TextExtractor.Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

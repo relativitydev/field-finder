@@ -136,11 +136,11 @@ namespace TextExtractor.Helpers
 		{
             int startIndex = -1;
             int characterLength = 0;
-
+                        
             switch (this.TargetRule.DirectionEnum)
             {
                 case Constant.DirectionEnum.Right:
-                    startIndex = matchingTextIndex;
+                    startIndex = TargetRule.IncludeMarker ? matchingTextIndex : matchingTextIndex + markerLength;
 
                     //Check to see if the text has to be truncated
                     if (matchingTextIndex + markerLength + this.TargetRule.CharacterLength > textSource.Length)
@@ -150,7 +150,7 @@ namespace TextExtractor.Helpers
                     }
                     else
                     {
-                        characterLength = markerLength + this.TargetRule.CharacterLength;
+                        characterLength = TargetRule.IncludeMarker ? markerLength + this.TargetRule.CharacterLength : this.TargetRule.CharacterLength;
                     }
 
                     break;
@@ -160,18 +160,23 @@ namespace TextExtractor.Helpers
                 case Constant.DirectionEnum.LeftAndRight:
                     GetLeftStartIndexAndCharLenght(matchingTextIndex, markerLength, ref startIndex, ref characterLength);
 
+                    string leftSide = textSource.Substring(startIndex, characterLength);
+
                     //Check to see if the text has to be truncated
                     if (matchingTextIndex + markerLength + this.TargetRule.CharacterLength > textSource.Length)
                     {
-                        characterLength = textSource.Length - startIndex;
+                        characterLength = textSource.Length - matchingTextIndex - markerLength;
                         IsTextTruncated = true;
                     }
                     else
                     {
-                        characterLength = characterLength + this.TargetRule.CharacterLength;
+                        characterLength = this.TargetRule.CharacterLength;
                     }
 
-                    break;
+                    string rightSide = textSource.Substring(matchingTextIndex + markerLength, characterLength);
+
+                    string combinedOutput = TargetRule.IncludeMarker ? leftSide + rightSide : leftSide.Trim() + " " + rightSide.TrimStart();
+                    return combinedOutput;
                 case Constant.DirectionEnum.RightToStopMarker:                   
                     //stopMarker not found, so no extraction
                     if (this.currentStopMarkerIndex <= matchingTextIndex) 
@@ -180,16 +185,17 @@ namespace TextExtractor.Helpers
                         break;
                     }
 
-                    startIndex = matchingTextIndex;
+                    startIndex = TargetRule.IncludeMarker ? matchingTextIndex : matchingTextIndex + markerLength;
                     
                     //stopMarker is too far by TargetRule CharLen
-                    if (startIndex + markerLength + TargetRule.CharacterLength < currentStopMarkerIndex)
+                    if (matchingTextIndex + markerLength + TargetRule.CharacterLength < currentStopMarkerIndex)
                     {
-                        characterLength = markerLength + TargetRule.CharacterLength;                        
+                        characterLength = TargetRule.IncludeMarker ? markerLength + TargetRule.CharacterLength : TargetRule.CharacterLength;                        
                     }
                     else
                     {
-                        characterLength = this.currentStopMarkerIndex - startIndex + this.currentStopMarker.Length;
+                        characterLength = TargetRule.IncludeMarker ? this.currentStopMarkerIndex - startIndex + this.currentStopMarker.Length :
+                            this.currentStopMarkerIndex - startIndex;
                     }
 
                     break;
@@ -211,13 +217,13 @@ namespace TextExtractor.Helpers
             if (matchingTextIndex - this.TargetRule.CharacterLength < 0)
             {
                 startIndex = 0;
-                characterLength = matchingTextIndex + markerLength;
+                characterLength = TargetRule.IncludeMarker ? matchingTextIndex + markerLength : matchingTextIndex;
                 IsTextTruncated = true;
             }
             else
             {
                 startIndex = matchingTextIndex - this.TargetRule.CharacterLength;
-                characterLength = this.TargetRule.CharacterLength + markerLength;
+                characterLength = TargetRule.IncludeMarker ? this.TargetRule.CharacterLength + markerLength : this.TargetRule.CharacterLength;
             }
         }	        
 

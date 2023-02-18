@@ -13,6 +13,7 @@ namespace TextExtractor.Helpers.Interfaces
       Int32 CharacterLength { get; set; }
       Constant.TrimStyleEnum TrimStyleEnum { get; set; }
       Boolean CaseSensitive { get; set; }
+      Boolean IncludeMarker { get; set; }
       Int32 Occurrence { get; set; }
 
       Int32 MaximumExtractions { get; set; }

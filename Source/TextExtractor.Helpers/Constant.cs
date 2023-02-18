@@ -75,6 +75,7 @@ namespace TextExtractor.Helpers
 					public static readonly Guid RegularExpressionStopMarker = new Guid("BE9E2560-F4A3-458F-887D-FBFF42870E9E");
 					public static readonly Guid PlainTextStopMarker = new Guid("81FCA6AF-5BFF-4DA8-844D-D17D5029B92F");
 					public static readonly Guid ApplyStopMarker = new Guid("C0EA46EB-0402-4B37-95B2-815E3E676E6A");
+					public static readonly Guid IncludeMarker = new Guid("C0B5742D-5E7C-4E49-A03F-F03550C65E02");
 
 				}
 
@@ -178,6 +179,7 @@ namespace TextExtractor.Helpers
 			public const Int32 MANAGER_QUEUE_BATCH_SIZE = 5;
 			public const Int32 SAVED_SEARCH_BATCH_SIZE = 1000;
 			public const Int32 WORKER_BATCH_SIZE = 10;
+            public const Int32 EXTRACTOR_TARGET_TEXT_SOURCE_LENGTH_MAXIMUM = 4000000;
 			public const Int32 EXTRACTOR_TARGET_TEXT_OCCURENCE_MINIMUM = 1;
 			public const Int32 EXTRACTOR_TARGET_TEXT_OCCURENCE_MAXIMUM = 100;
 			public const Int32 EXTRACTOR_TARGET_TEXT_CHARACTERS_MINIMUM = 1;
@@ -256,6 +258,7 @@ namespace TextExtractor.Helpers
 			public const String EXTRACTION_SET_CANNOT_DELETE_MULTIPLE_RECORD = "At least one selected Extractor Set record cannot be deleted as it has already been submitted for processing.";
 			public const String EXTRACTION_SET_CANNOT_DELETE_CURRENT_RECORD_HISTORY = "At least one Extractor Set record cannot be deleted as dependencies currently exist.";
 			public const String EXTRACTION_PROFILE_CANNOT_DELETE_MULTIPLE_RECORD_QUEUE = "At least one Extractor Profile record cannot be deleted as records exist in the Agent queue tables.";
+            public const String TARGET_TEXT_SOURCE_LENGTH_EXCEEDS_MAXIMUM = "Target Text Source Field exceeds Maximum length of {0} characters";
 			public const String EXTRACTION_TARGET_TEXT_RECORD_DEPENDENCY = "At least one Extractor Target Text record is currently associated to one or more Extractor Profiles and cannot be deleted.";
 			public const String FAILEDQUERY_SAVEDSEARCH = "Saved search query failed to return document results";
 			public const String CHARACTER_LENGTH_IS_NEGATIVE = "CharacterLength cannot be negative.";
@@ -269,6 +272,7 @@ namespace TextExtractor.Helpers
 			public const String TARGET_TEXT_OCCURENCE_MAXIMUM_EXCEEDED = "Please make sure to enter a positive value less than or equal to {0} for the Occurrence field.";
 			public const String TARGET_TEXT_MAXIMUM_EXTRACTIONS_MAXIMUM_EXCEEDED = "Please make sure to enter a positive value less than or equal to {0} for the Maximum Extractioms field.";
 			public const String TARGET_TEXT_MINIMUM_EXTRACTIONS_MAXIMUM_EXCEEDED = "Please make sure to enter a positive value less than or equal to {0} for the Minimum Extractioms field.";
+            public const String TARGET_TEXT_MINIMUM_EXTRACTIONS_EXCEED_MAXIMUM_EXTRACTIONS = "Maximum Extractions must be greater than or equal to Minimum Extractions. ";
 			public const String TARGET_TEXT_CHARACTERS_NEGATIVE = "Please make sure to enter a positive value for the Number of Characters field.";
 			public const String TARGET_TEXT_CHARACTERS_MAXIMUM_EXCEEDED = "Please make sure to enter a positive value less than or equal to {0} for the Number of Characters field.";
 			public const String DEFAULT_CONVERT_TO_EXTRACTOR_TARGET_TEXT_ERROR_MESSAGE = "An error occured when converting extractorTargetTextRdo to ExtractorTargetText";
